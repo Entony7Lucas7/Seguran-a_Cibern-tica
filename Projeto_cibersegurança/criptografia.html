@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia</title>
+    <style>
+        /* Estilização geral */
+        body {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            color: #0ff;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        /* Menu de navegação */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 255, 255, 0.5);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            flex-wrap: wrap; /* Permite que os links quebrem linha em telas menores */
+        }
+
+        nav a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Conteúdo principal */
+        .content {
+            position: relative;
+            max-width: 900px;
+            margin: 100px auto 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 10px;
+            border: 1px solid #0ff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            z-index: 1;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #0ff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #0cc;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            color: #0ff;
+        }
+
+        /* Canvas para a animação */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Ajustes de responsividade */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column; /* Links em uma coluna */
+                align-items: center; /* Centraliza os links */
+            }
+
+            nav a {
+                margin: 10px 0; /* Espaçamento entre os links */
+                font-size: 1rem; /* Tamanho menor para telas pequenas */
+            }
+
+            .content {
+                margin: 80px 10px 2rem; /* Reduz margem lateral */
+                padding: 1rem; /* Reduz padding interno */
+            }
+
+            h1, h2 {
+                font-size: 1.5rem; /* Reduz o tamanho das fontes */
+            }
+
+            p {
+                font-size: 0.9rem; /* Fonte menor para textos */
+            }
+
+            ul {
+                padding-left: 1rem; /* Ajusta margem do ul */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 0.9rem; /* Fonte ainda menor */
+            }
+
+            .content {
+                padding: 0.8rem; /* Reduz ainda mais o padding */
+            }
+
+            p {
+                font-size: 0.8rem; /* Texto mais compacto */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animação de fundo -->
+    <canvas id="binaryCanvas"></canvas>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <a href="index.html">Segurança Cibernética</a>
+        <a href="guerra_cibernetica.html">Guerra Cibernética</a>
+        <a href="curiosidades.html">Curiosidades</a>
+        <a href="vazamento.html">Vazamento de Dados</a>
+        <a href="criptografia.html">Criptografia</a>
+        <a href="malwares.html">Malwares</a>
+    </nav>
+
+    <!-- Conteúdo da página -->
+    <div class="content">
+        <h1>Criptografia</h1>
+        <p>
+            A criptografia é um dos pilares da segurança da informação, sendo crucial para proteger dados contra acessos
+            não autorizados. Ela utiliza algoritmos matemáticos para embaralhar informações de maneira que apenas quem possui
+            a chave correta possa acessá-las. No contexto atual, a criptografia é amplamente utilizada em transações bancárias,
+            comunicação digital e proteção de dados pessoais.
+        </p>
+
+        <h2>O que é Criptografia?</h2>
+        <p>
+            A criptografia é o processo de codificar dados para que apenas pessoas autorizadas possam acessar ou compreender
+            as informações. Ela transforma informações legíveis, chamadas de texto simples, em dados ilegíveis, conhecidos
+            como texto cifrado. Para decifrar essas informações, é necessário utilizar uma chave criptográfica.
+        </p>
+
+        <h2>Tipos de Criptografia</h2>
+        <p>
+            Existem diversos tipos de criptografia, cada um com suas características, vantagens e casos de uso. Os principais tipos
+            de criptografia são:
+        </p>
+        <ul>
+            <li><strong>Criptografia Simétrica:</strong> Neste tipo de criptografia, a mesma chave é usada tanto para cifrar quanto para
+                decifrar os dados. O principal desafio é o compartilhamento seguro da chave entre as partes envolvidas.
+                <br><strong>Exemplo:</strong> AES (Advanced Encryption Standard), DES (Data Encryption Standard).
+            </li>
+            <li><strong>Criptografia Assimétrica:</strong> Também conhecida como criptografia de chave pública, ela utiliza um par de chaves:
+                uma chave pública para cifrar e uma chave privada para decifrar. O envio de dados seguros é mais fácil, já que a chave
+                pública pode ser compartilhada sem comprometer a segurança.
+                <br><strong>Exemplo:</strong> RSA (Rivest–Shamir–Adleman), ECC (Elliptic Curve Cryptography).
+            </li>
+            <li><strong>Criptografia Hash:</strong> Diferente das outras, a criptografia hash transforma dados em um valor fixo,
+                conhecido como hash. Ela não pode ser revertida (não há processo de decifração), sendo utilizada principalmente para
+                verificar a integridade de dados.
+                <br><strong>Exemplo:</strong> SHA-256, MD5.
+            </li>
+        </ul>
+
+        <h2>Como a Criptografia Protege Seus Dados?</h2>
+        <p>
+            A criptografia ajuda a proteger dados de diferentes formas:
+        </p>
+        <ul>
+            <li><strong>Confidencialidade:</strong> Ao cifrar os dados, a criptografia assegura que somente as partes autorizadas
+                possam acessá-los e compreendê-los.</li>
+            <li><strong>Integridade:</strong> Ela assegura que os dados não foram alterados durante o armazenamento ou a transmissão.</li>
+            <li><strong>Autenticação:</strong> A criptografia também pode ser usada para autenticar a identidade das partes envolvidas
+                em uma comunicação.</li>
+            <li><strong>Não-repúdio:</strong> Garante que uma parte não possa negar a autoria de uma comunicação ou transação.</li>
+        </ul>
+
+        <h2>Como Usar Criptografia para Manter Seus Dados Seguros</h2>
+        <p>
+            Para garantir que seus dados estejam protegidos, é fundamental adotar boas práticas de criptografia. Algumas dessas práticas incluem:
+        </p>
+        <ul>
+            <li><strong>Escolha Senhas Fortes:</strong> Senhas complexas são fundamentais para a segurança dos sistemas de criptografia.
+                Combine letras maiúsculas, minúsculas, números e caracteres especiais.</li>
+            <li><strong>Utilize Criptografia de Ponta a Ponta:</strong> Em comunicações digitais, como mensagens ou e-mails, use criptografia
+                de ponta a ponta para garantir que apenas o remetente e o destinatário possam ler o conteúdo.</li>
+            <li><strong>Proteja Suas Chaves Privadas:</strong> Mantenha suas chaves privadas em segurança e nunca as compartilhe.
+                Se alguém tiver acesso à sua chave privada, poderá decifrar seus dados.</li>
+            <li><strong>Utilize Certificados Digitais:</strong> Certificados digitais são usados para autenticar a identidade de sites e
+                garantir que a comunicação com eles seja segura. Certifique-se de que o site que você está acessando possua um
+                certificado válido (verifique o "https" no início da URL).</li>
+            <li><strong>Mantenha seus Sistemas Atualizados:</strong> As falhas de segurança em algoritmos criptográficos antigos ou mal
+                implementados podem ser exploradas. Mantenha sempre seus sistemas de criptografia e suas ferramentas atualizadas.</li>
+        </ul>
+
+        <h2>Exemplos de Criptografia no Mundo Real</h2>
+        <p>
+            A criptografia está em uso em diversas situações cotidianas para proteger dados pessoais e corporativos:
+        </p>
+        <ul>
+            <li><strong>Transações Bancárias:</strong> As transações financeiras realizadas online são criptografadas para garantir
+                que informações sensíveis, como números de cartão de crédito e senhas, sejam transmitidas de forma segura.</li>
+            <li><strong>Aplicativos de Mensagens:</strong> Apps de mensagens como WhatsApp, Signal e Telegram utilizam criptografia de
+                ponta a ponta para proteger a privacidade das conversas.</li>
+            <li><strong>Armazenamento em Nuvem:</strong> A criptografia é utilizada para proteger dados armazenados em serviços de nuvem,
+                como Google Drive e Dropbox, contra acessos não autorizados.</li>
+            <li><strong>Assinaturas Digitais:</strong> Utilizadas para autenticar documentos e transações, garantindo que as partes
+                envolvidas não possam negar sua autoria.</li>
+        </ul>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("binaryCanvas");
+        const ctx = canvas.getContext("2d");
+        const binaryChars = "01";
+        const columns = canvas.width = window.innerWidth;
+        const rows = canvas.height = window.innerHeight;
+        const fontSize = 16;
+        const dropSpeed = 3;
+
+        const drops = [];
+
+        for (let i = 0; i < columns / fontSize; i++) {
+            drops[i] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0ff";
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const char = binaryChars[Math.floor(Math.random() * binaryChars.length)];
+                ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > rows && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+    </script>
+</body>
+</html>

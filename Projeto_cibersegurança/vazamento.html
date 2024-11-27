@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vazamento de Dados</title>
+    <style>
+        /* Estilização geral */
+        body {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            color: #0ff;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        /* Menu de navegação */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 255, 255, 0.5);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            flex-wrap: wrap; /* Permite que os links quebrem linha em telas menores */
+        }
+
+        nav a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Conteúdo principal */
+        .content {
+            position: relative;
+            max-width: 900px;
+            margin: 100px auto 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 10px;
+            border: 1px solid #0ff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            z-index: 1;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #0ff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #0cc;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            color: #0ff;
+        }
+
+        /* Canvas para a animação */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Ajustes de responsividade */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column; /* Links em uma coluna */
+                align-items: center; /* Centraliza os links */
+            }
+
+            nav a {
+                margin: 10px 0; /* Espaçamento entre os links */
+                font-size: 1rem; /* Tamanho menor para telas pequenas */
+            }
+
+            .content {
+                margin: 80px 10px 2rem; /* Reduz margem lateral */
+                padding: 1rem; /* Reduz padding interno */
+            }
+
+            h1, h2 {
+                font-size: 1.5rem; /* Reduz o tamanho das fontes */
+            }
+
+            p {
+                font-size: 0.9rem; /* Fonte menor para textos */
+            }
+
+            ul {
+                padding-left: 1rem; /* Ajusta margem do ul */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 0.9rem; /* Fonte ainda menor */
+            }
+
+            .content {
+                padding: 0.8rem; /* Reduz ainda mais o padding */
+            }
+
+            p {
+                font-size: 0.8rem; /* Texto mais compacto */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animação de fundo -->
+    <canvas id="binaryCanvas"></canvas>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <a href="index.html">Segurança Cibernética</a>
+        <a href="guerra_cibernetica.html">Guerra Cibernética</a>
+        <a href="curiosidades.html">Curiosidades</a>
+        <a href="vazamento.html">Vazamento de Dados</a>
+        <a href="criptografia.html">Criptografia</a>
+        <a href="malwares.html">Malwares</a>
+    </nav>
+
+    <!-- Conteúdo da página -->
+    <div class="content">
+        <h1>Vazamento de Dados</h1>
+        <p>
+            Vazamentos de dados referem-se à exposição não autorizada de informações confidenciais, pessoais ou corporativas.
+            Esses incidentes podem ocorrer de diversas formas, desde brechas em sistemas de segurança até falhas humanas, e têm se
+            tornado cada vez mais comuns com o aumento da digitalização. Vazamentos de dados podem causar danos significativos
+            à privacidade e à segurança de indivíduos e empresas.
+        </p>
+
+        <h2>Principais Tipos de Vazamento de Dados</h2>
+        <p>
+            O vazamento de dados pode ocorrer de várias maneiras. Alguns dos tipos mais comuns incluem:
+        </p>
+        <ul>
+            <li><strong>Vazamento de Dados Pessoais:</strong> Inclui informações como nome, endereço, CPF, e-mail, números de cartão de crédito e dados bancários.</li>
+            <li><strong>Vazamento de Dados Corporativos:</strong> Refere-se a informações sensíveis de empresas, como segredos comerciais, projetos de pesquisa e dados financeiros.</li>
+            <li><strong>Vazamento em Redes Sociais:</strong> Ocorre quando dados pessoais são expostos de maneira inadequada em plataformas sociais.</li>
+            <li><strong>Vazamento via Phishing:</strong> Técnicas de engenharia social onde usuários são enganados para revelar dados sensíveis.</li>
+        </ul>
+
+        <h2>Casos Notórios de Vazamento de Dados</h2>
+        <p>
+            Ao longo dos anos, diversos casos de vazamentos de dados ganharam atenção mundial, destacando os riscos envolvidos:
+        </p>
+        <ul>
+            <li><strong>Vazamento do Facebook (2018):</strong> Dados de mais de 50 milhões de usuários foram expostos devido a falhas no uso de aplicativos de terceiros.</li>
+            <li><strong>Vazamento da Equifax (2017):</strong> Dados de cerca de 147 milhões de consumidores dos Estados Unidos, incluindo números de Seguridade Social, foram comprometidos.</li>
+            <li><strong>Vazamento do Yahoo (2014):</strong> Cerca de 3 bilhões de contas de usuários foram afetadas por um ataque cibernético massivo.</li>
+        </ul>
+
+        <h2>Como se Prevenir de Vazamentos de Dados</h2>
+        <p>
+            A proteção contra vazamentos de dados exige medidas preventivas robustas para minimizar os riscos e garantir a segurança
+            das informações. Algumas das principais formas de prevenção incluem:
+        </p>
+        <ul>
+            <li><strong>Utilização de Senhas Fortes:</strong> Senhas complexas e únicas devem ser utilizadas em todas as contas e sistemas.</li>
+            <li><strong>Autenticação de Dois Fatores:</strong> Ativar a autenticação de dois fatores aumenta a segurança das contas online.</li>
+            <li><strong>Criptografia de Dados:</strong> A criptografia de dados sensíveis garante que, mesmo que haja acesso não autorizado, as informações não sejam legíveis.</li>
+            <li><strong>Treinamento de Funcionários:</strong> Promover a educação sobre segurança cibernética entre os funcionários pode prevenir falhas humanas, como o phishing.</li>
+            <li><strong>Monitoramento de Sistemas:</strong> Implementar ferramentas de monitoramento de segurança para detectar e responder rapidamente a ataques.</li>
+            <li><strong>Política de Privacidade e Consentimento:</strong> Garantir que as políticas de privacidade sejam claras e que os usuários consentem com o uso de seus dados.</li>
+        </ul>
+
+        <h2>Legislação e Proteção de Dados</h2>
+        <p>
+            Diversos países implementaram legislações para proteger os dados dos cidadãos, incluindo a Lei Geral de Proteção de Dados
+            (LGPD) no Brasil, que estabelece diretrizes rigorosas sobre como as empresas devem lidar com informações pessoais e
+            como os usuários podem exercer seus direitos sobre seus dados.
+        </p>
+
+        <h2>Impactos de um Vazamento de Dados</h2>
+        <p>
+            Os vazamentos de dados podem causar impactos devastadores, tanto para indivíduos quanto para organizações:
+        </p>
+        <ul>
+            <li><strong>Perda de Privacidade:</strong> O vazamento de informações pessoais pode expor indivíduos a roubos de identidade e fraudes.</li>
+            <li><strong>Danos à Reputação:</strong> Empresas podem sofrer danos significativos à sua imagem e confiança dos clientes.</li>
+            <li><strong>Consequências Legais:</strong> As empresas podem ser responsabilizadas legalmente por falhas na proteção de dados.</li>
+            <li><strong>Prejuízos Financeiros:</strong> Multas pesadas e custos de recuperação podem ser incorridos após um vazamento de dados.</li>
+        </ul>
+
+        <h2>Conclusão</h2>
+        <p>
+            A segurança dos dados é uma responsabilidade contínua. Com a implementação de boas práticas de segurança, políticas de privacidade
+            claras e a conscientização de todos, é possível reduzir os riscos de vazamentos e proteger tanto dados pessoais quanto corporativos.
+        </p>
+    </div>
+
+    <!-- Script para animação de fundo -->
+    <script>
+        // Seleciona o canvas
+        const canvas = document.getElementById('binaryCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Ajusta o tamanho do canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Configurações do "código"
+        const fontSize = 16;
+        const columns = canvas.width / fontSize; // Número de colunas para os números binários
+        const drops = Array.from({ length: columns }).fill(1); // Inicia as posições de queda
+
+        // Função para desenhar os números binários
+        function draw() {
+            // Fundo semi-transparente para criar o rastro
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Configura a cor e fonte
+            ctx.fillStyle = '#0ff';
+            ctx.font = `${fontSize}px monospace`;
+
+            // Desenha os números binários
+            for (let i = 0; i < drops.length; i++) {
+                const char = Math.random() > 0.5 ? '1' : '0'; // Gera números binários aleatórios
+                ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+                // Reinicia a queda para o topo
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        // Chama a função de desenho repetidamente
+        setInterval(draw, 33);
+    </script>
+</body>
+</html>

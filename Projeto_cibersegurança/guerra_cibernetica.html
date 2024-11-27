@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guerra Cibernética</title>
+    <style>
+        /* Estilização geral */
+        body {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            color: #0ff;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        /* Menu de navegação */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 255, 255, 0.5);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            flex-wrap: wrap; /* Permite que os links quebrem linha em telas menores */
+        }
+
+        nav a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Conteúdo principal */
+        .content {
+            position: relative;
+            max-width: 900px;
+            margin: 100px auto 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 10px;
+            border: 1px solid #0ff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            z-index: 1;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #0ff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #0cc;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            color: #0ff;
+        }
+
+        /* Canvas para a animação */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Ajustes de responsividade */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column; /* Links em uma coluna */
+                align-items: center; /* Centraliza os links */
+            }
+
+            nav a {
+                margin: 10px 0; /* Espaçamento entre os links */
+                font-size: 1rem; /* Tamanho menor para telas pequenas */
+            }
+
+            .content {
+                margin: 80px 10px 2rem; /* Reduz margem lateral */
+                padding: 1rem; /* Reduz padding interno */
+            }
+
+            h1, h2 {
+                font-size: 1.5rem; /* Reduz o tamanho das fontes */
+            }
+
+            p {
+                font-size: 0.9rem; /* Fonte menor para textos */
+            }
+
+            ul {
+                padding-left: 1rem; /* Ajusta margem do ul */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 0.9rem; /* Fonte ainda menor */
+            }
+
+            .content {
+                padding: 0.8rem; /* Reduz ainda mais o padding */
+            }
+
+            p {
+                font-size: 0.8rem; /* Texto mais compacto */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animação de fundo -->
+    <canvas id="binaryCanvas"></canvas>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <a href="index.html">Segurança Cibernética</a>
+        <a href="guerra_cibernetica.html">Guerra Cibernética</a>
+        <a href="curiosidades.html">Curiosidades</a>
+        <a href="vazamento.html">Vazamento de Dados</a>
+        <a href="criptografia.html">Criptografia</a>
+        <a href="malwares.html">Malwares</a>
+    </nav>
+    <!-- Conteúdo da página -->
+    <div class="content">
+        <h1>Guerra Cibernética</h1>
+        <p>
+            A guerra cibernética é um conflito que ocorre no espaço digital, no qual países, organizações e indivíduos utilizam tecnologias
+            avançadas para atacar ou defender infraestruturas críticas, sistemas de informação e redes. Diferentemente de guerras tradicionais,
+            as batalhas no ciberespaço são invisíveis, rápidas e muitas vezes devastadoras, causando impactos econômicos, políticos e sociais.
+        </p>
+
+        <h2>Como Funciona?</h2>
+        <p>
+            A guerra cibernética pode ser conduzida por estados-nação, grupos de hackers patrocinados ou organizações independentes. Os métodos
+            mais comuns incluem:
+        </p>
+        <ul>
+            <li><strong>Espionagem Cibernética:</strong> Roubo de informações confidenciais, como segredos militares ou empresariais.</li>
+            <li><strong>Ataques DDoS:</strong> Sobrecarga de servidores para tirar sites e serviços do ar.</li>
+            <li><strong>Malwares:</strong> Software malicioso usado para espionar, roubar ou destruir dados.</li>
+            <li><strong>Sabotagem:</strong> Ataques a infraestruturas críticas, como redes de energia, transporte e telecomunicações.</li>
+        </ul>
+
+        <h2>Impactos e Riscos</h2>
+        <p>
+            Os efeitos da guerra cibernética podem ser devastadores, incluindo:
+        </p>
+        <ul>
+            <li><strong>Paralisação de serviços essenciais:</strong> Hospitais, transportes e sistemas de energia podem ser desativados.</li>
+            <li><strong>Perdas financeiras:</strong> Empresas e governos podem enfrentar prejuízos bilionários.</li>
+            <li><strong>Instabilidade política:</strong> Ataques podem desestabilizar governos e influenciar eleições.</li>
+            <li><strong>Ameaças à privacidade:</strong> Dados de cidadãos e organizações podem ser expostos.</li>
+        </ul>
+
+        <h2>Exemplo de Guerra Cibernética</h2>
+        <p>
+            Um dos exemplos mais notórios foi o ataque ao programa nuclear do Irã em 2010 com o uso do malware *worm Stuxnet*. Este malware,
+            desenvolvido por Estados Unidos e Israel, foi projetado para sabotar centrífugas de enriquecimento de urânio, retardando o
+            progresso nuclear do Irã. Este ataque marcou uma nova era de conflitos cibernéticos.
+        </p>
+
+        <h2>Veja a Guerra Cibernética em Tempo Real</h2>
+        <p>
+            Acompanhe a guerra cibernética global em tempo real no mapa interativo da Kaspersky:
+        </p>
+        <p>
+            <a href="https://cybermap.kaspersky.com" target="_blank" style="color: #0ff; text-decoration: underline;">
+                Cybermap da Kaspersky
+            </a>
+        </p>
+    </div>
+
+    <!-- Script para animação de fundo -->
+    <script>
+        // Seleciona o canvas
+        const canvas = document.getElementById('binaryCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Ajusta o tamanho do canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Configurações do "código"
+        const fontSize = 16;
+        const columns = canvas.width / fontSize; // Número de colunas para os números binários
+        const drops = Array.from({ length: columns }).fill(1); // Inicia as posições de queda
+
+        // Função para desenhar os números binários
+        function draw() {
+            // Fundo semi-transparente para criar o rastro
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Cor e fonte dos números
+            ctx.fillStyle = '#0ff';
+            ctx.font = `${fontSize}px monospace`;
+
+            // Loop pelas colunas
+            for (let i = 0; i < drops.length; i++) {
+                // Gera um número binário aleatório
+                const text = Math.random() > 0.5 ? '1' : '0';
+                // Desenha o número no canvas
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // Randomiza a reposição da "gota"
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                // Move a "gota" para baixo
+                drops[i]++;
+            }
+        }
+
+        // Atualiza a tela continuamente
+        setInterval(draw, 50);
+
+        // Ajusta o tamanho do canvas ao redimensionar a janela
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
